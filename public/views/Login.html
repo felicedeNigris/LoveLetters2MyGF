@@ -1,0 +1,20 @@
+
+<div class="container"><br/><br/>
+  <h1>Login</h1>
+  <form ng-submit="login(user)">
+    <div class="input-group">
+      <div class="input-group-addon"><span aria-hidden="true" class="glyphicon glyphicon-envelope"></span></div>
+      <input type="email" ng-model="user.email" placeholder="Email" required="required" class="form-control"/>
+    </div><br/><br/>
+    <div class="input-group">
+      <div class="input-group-addon"><span aria-hidden="true" class="glyphicon glyphicon-lock"></span></div>
+      <input type="password" ng-model="user.password" placeholder="Password" class="form-control"/>
+    </div>
+    <input type="submit" value="Login" class="btn btn-black"/>
+  </form>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+      $.material.init();
+  });  
+</script>

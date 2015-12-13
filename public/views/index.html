@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myBlogApp">
+  <head>
+    <title>blog page</title>
+    <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap-material-design/dist/css/material.min.css">
+    <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap-material-design/dist/css/ripples.min.css">
+    <link rel="stylesheet" type="text/css" href="../../bower_components/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/css/styles.css">
+  </head>
+  <body>
+    <navigationbar></navigationbar>
+    <div ng-view></div>
+    <footerbar></footerbar>
+    <!--jquery-->
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <!--bootstrap-->
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--bootstrap material-->
+    <script src="../../bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
+    <!--ripples-->
+    <script src="../../bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
+    <!-- angular-->
+    <script src="../../bower_components/angular/angular.min.js"> </script>
+    <!-- ngroute-->
+    <script src="../../bower_components/angular-route/angular-route.min.js"></script>
+    <!--ngapp module-->
+    <script src="../scripts/app.module.js"> </script>
+    <!--ng firebase-->
+    <script src="../../bower_components/firebase/firebase.js"></script>
+    <!--ng fire -->
+    <script src="../../bower_components/angularfire/dist/angularfire.min.js"></script>
+    <!--ng navbar directive-->
+    <script src="../scripts/directives/navbar_directive.js"></script>
+    <script src="../scripts/directives/footer_directive.js"></script>
+    <!--ng Auth service   -->
+    <script src="../scripts/services/Auth.js"></script>
+    <!--ngcontroller AuthController-->
+    <script src="../scripts/controllers/authlogin.js"></script>
+    <!--Navbar Controller-->
+    <script src="../scripts/controllers/navbar.js"></script>
+    <!--Filepicker-->
+    <script src="../../bower_components/filepicker-js/filepicker.min.js"></script>
+    <script src="../../bower_components/angular-filepicker/dist/angular_filepicker.min.js"></script>
+    <script src="../scripts/services/FilePickerService.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $.material.init();
+      });  
+    </script>
+  </body>
+</html>

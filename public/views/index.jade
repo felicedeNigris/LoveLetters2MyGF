@@ -1,0 +1,49 @@
+doctype html
+html(lang="en" ng-app="myBlogApp")
+  head
+    title blog page
+    link(rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css")    
+    link(rel="stylesheet" type="text/css" href="../../bower_components/bootstrap-material-design/dist/css/material.min.css")    
+    link(rel="stylesheet" type="text/css" href="../../bower_components/bootstrap-material-design/dist/css/ripples.min.css")
+    link(rel="stylesheet" type="text/css" href="../../bower_components/mdi/css/materialdesignicons.min.css")    
+    link(rel="stylesheet" type="text/css" href="../styles/css/styles.css")
+  body
+    navigationbar
+    div(ng-view)
+    footerbar
+
+    //jquery
+    script(src="../../bower_components/jquery/dist/jquery.min.js")
+    //bootstrap
+    script(src="../../bower_components/bootstrap/dist/js/bootstrap.min.js")
+    //bootstrap material
+    script(src="../../bower_components/bootstrap-material-design/dist/js/material.min.js")
+    //ripples
+    script(src="../../bower_components/bootstrap-material-design/dist/js/ripples.min.js")
+    // angular
+    script(src="../../bower_components/angular/angular.min.js") 
+    // ngroute
+    script(src="../../bower_components/angular-route/angular-route.min.js")
+    //ngapp module
+    script(src="../scripts/app.module.js") 
+    //ng firebase
+    script(src="../../bower_components/firebase/firebase.js")
+    //ng fire 
+    script(src="../../bower_components/angularfire/dist/angularfire.min.js")
+    //ng navbar directive
+    script(src="../scripts/directives/navbar_directive.js")
+    script(src="../scripts/directives/footer_directive.js")
+    //ng Auth service   
+    script(src="../scripts/services/Auth.js")
+    //ngcontroller AuthController
+    script(src="../scripts/controllers/authlogin.js")
+    //Navbar Controller
+    script(src="../scripts/controllers/navbar.js")
+    //Filepicker
+    script(src="../../bower_components/filepicker-js/filepicker.min.js")
+    script(src="../../bower_components/angular-filepicker/dist/angular_filepicker.min.js")
+    script(src="../scripts/services/FilePickerService.js")
+    script(type="text/javascript").
+        $(document).ready(function(){
+            $.material.init();
+        });  
