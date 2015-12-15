@@ -8,8 +8,45 @@ $black: rgba(25,25,25,0.9);
 .navbar.navbar{
   background-color: $black;
 }
+.warning-box{
+  display:none;
+  position:absolute;
+  opacity: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 2;
+  animation-name: register-notify;
+  animation-delay: 1000ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.56, 1.38);
+  animation-duration: 2700ms;
+  @keyframes register-notify{
+    0%{
+      top: -100px;
+    }
+    40%{
+      opacity: 1;
+      top: 0;
+    }
+    60%{
+      opacity:1;
+    }
+    99%{
+      opacity:0;
+      top:200px;
+    }
+    100%{
+      display: none;
+    }
+  }
+
+}
 #profile{
-  float:right;
+  //float:right;
+  position:absolute;
+  right: 50px
 }
 // override a to black w alpha
 a{

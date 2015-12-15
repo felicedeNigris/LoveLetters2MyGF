@@ -35,15 +35,16 @@ angular.module('AuthService', [])
             email: user.email,
             password: user.password
           })
-          .then(function(userData) {
-            console.log("User " + userData.uid + " created successfully!");
+          .then(function(authData) {
+            console.log("User " + authData.uid + " created successfully from register service!");
             return authObj.$authWithPassword({
               email: user.email,
               password: user.password,
             });
           }).then(function(authData) {
-            console.log("Logged in as:", authData.uid);
+            //console.log("Logged in as:", authData.uid);
             location.reload();
+            $location.path('/');
             return Auth.createProfile(authData, user);
           }).catch(function(error) {
             console.error("Error: ", error);

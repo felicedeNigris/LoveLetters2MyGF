@@ -1,18 +1,20 @@
 app.controller('AuthController', function($scope, $location, Auth){
 
   $scope.register = function(user){
-    Auth.register(user).then(function(){
-      console.log("Register successfully!");
-      $location.path("/");
-    }, function(err){
-      console.log("Error...");
-    });
+    Auth.register(user)
+      .then(function(){
+        //alert("Register successfully from register controller!");
+        $location.path("/register");
+      },
+      function(err){
+        console.log("Error...");
+      });
   };
-
   $scope.login = function(user){
-    Auth.login(user).then(function(){
-      console.log("Logged in successfully!");
-      $location.path("/");
+    Auth.login(user)
+      .then(function(){
+        console.log("Logged in successfully!");
+        $location.path("/");
     }, function(err){
       console.log("Error...");
     });

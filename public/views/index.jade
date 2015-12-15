@@ -8,6 +8,9 @@ html(lang="en" ng-app="myBlogApp")
     link(rel="stylesheet" type="text/css" href="../../bower_components/mdi/css/materialdesignicons.min.css")    
     link(rel="stylesheet" type="text/css" href="../styles/css/styles.css")
   body
+    div(class="warning-box" registerwarning)
+        div(class="alert alert-success" role="alert")
+            h1 You Registered Successfully!
     navigationbar
     div(ng-view)
     footerbar
@@ -33,6 +36,8 @@ html(lang="en" ng-app="myBlogApp")
     //ng navbar directive
     script(src="../scripts/directives/navbar_directive.js")
     script(src="../scripts/directives/footer_directive.js")
+    //register directive    
+    script(src="../scripts/directives/register_directive.js")
     //ng Auth service   
     script(src="../scripts/services/Auth.js")
     //ngcontroller AuthController

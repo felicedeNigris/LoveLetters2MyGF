@@ -6,6 +6,7 @@ var app=angular.module('myBlogApp',
   'angular-filepicker',//angular filepicker
   'app.directives', //navbar directive
   'footerDirective', //footer directive
+  'registerDirective', //register directive
   'AuthService', //Auth service
   'FilePicker',//File Picker Service
   ])

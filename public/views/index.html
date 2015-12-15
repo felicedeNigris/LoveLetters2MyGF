@@ -9,6 +9,11 @@
     <link rel="stylesheet" type="text/css" href="../styles/css/styles.css">
   </head>
   <body>
+    <div registerwarning class="warning-box">
+      <div role="alert" class="alert alert-success">
+        <h1>You Registered Successfully!</h1>
+      </div>
+    </div>
     <navigationbar></navigationbar>
     <div ng-view></div>
     <footerbar></footerbar>
@@ -33,6 +38,8 @@
     <!--ng navbar directive-->
     <script src="../scripts/directives/navbar_directive.js"></script>
     <script src="../scripts/directives/footer_directive.js"></script>
+    <!--register directive    -->
+    <script src="../scripts/directives/register_directive.js"></script>
     <!--ng Auth service   -->
     <script src="../scripts/services/Auth.js"></script>
     <!--ngcontroller AuthController-->
