@@ -1,11 +1,11 @@
 app.controller('NavCtrlr',function($scope, $http, $routeParams, $location, Auth){
-
   $scope.signedIn = Auth.signedIn;
   $scope.currentUser = Auth.user;
+  $scope.mother = 'felideni@gmail.com';
   $scope.authState = function(signedIn){
     var loggedState = $scope.signedIn.$onAuth(function(authData){
       $scope.authData = authData;
-      console.log("authData is "+ authData + "and also authData.uid is " + authData.uid);
+      console.log("authData is "+ authData );
     });
     return authData;
   };

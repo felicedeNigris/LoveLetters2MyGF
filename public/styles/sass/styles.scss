@@ -8,6 +8,9 @@ $black: rgba(25,25,25,0.9);
 .navbar.navbar{
   background-color: $black;
 }
+#profile{
+  float:right;
+}
 // override a to black w alpha
 a{
   color:rgba(0,0,0,0.18);
