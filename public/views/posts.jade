@@ -11,7 +11,7 @@ div(class="container")
       a(ng-href="#/post/{{post.$id}}"){{post.title}}
         h3 {{post.text | limitTo: 30}}{{post.text.length > 30? "...": ""}}    
           i {{post.datetime | date:short}}
-    div(ng-show="signedIn()")
+    div(ng-show="signedIn() && currentUser.password.email === 'roche.kelly.e@gmail.com'")
       a(ng-href="#/edit/{{post.$id}}") Edit 
       br
       a(href="" ng-click="posts.$remove(post)") Delete 
