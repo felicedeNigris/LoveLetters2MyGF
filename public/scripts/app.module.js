@@ -7,9 +7,9 @@ var app=angular.module('myBlogApp',
   'app.directives', //navbar directive
   'footerDirective', //footer directive
   'AuthService', //Auth service
-  'FilePicker'//File Picker Service
+  'FilePicker',//File Picker Service
   ])
-    .constant('FBURL', "https://ngblogapp.firebaseio.com/posts") //fburl
+    .constant('FBURL', "https://ll2mygf.firebaseio.com/posts") //fburl
     .config(['$routeProvider', function($routeProvider){
       
         $routeProvider.when('/',{
@@ -18,9 +18,9 @@ var app=angular.module('myBlogApp',
         }).when('/post/:postId',{
             templateUrl:'../views/singlepost.html',
             controller: 'postController'
-        }).when('/page/:postId',{
+        }).when('/page/:id',{
             templateUrl:'../views/page.html',
-            controller: 'postController' //'PageController'
+            controller: 'NavCtrlr' //'PageController'
         }).when('/create',{
             templateUrl:'../views/createaPost.html',
             controller:'postController',
@@ -40,7 +40,7 @@ var app=angular.module('myBlogApp',
   ]);
 app.factory("Blog",["$firebaseArray","$routeParams", function($firebaseArray, $routeParams){
   
-  var ref = new Firebase("https://ngblogapp.firebaseio.com/posts");// FIREBASE OBJ  
+  var ref = new Firebase("https://ll2mygf.firebaseio.com/posts");// FIREBASE OBJ  
   var blogPostsArray = $firebaseArray(ref);
     return{
 

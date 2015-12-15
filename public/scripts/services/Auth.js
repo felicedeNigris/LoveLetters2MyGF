@@ -1,7 +1,7 @@
 angular.module('AuthService',[])
   .factory('Auth', function($firebaseAuth, $firebaseArray){
 
-  var ref = new Firebase("https://ngblogapp.firebaseio.com/");
+  var ref = new Firebase("https://ll2mygf.firebaseio.com/");
   var authObj = $firebaseAuth(ref);
   var authData = authObj.$getAuth(); //firebase auth data when you login 
 

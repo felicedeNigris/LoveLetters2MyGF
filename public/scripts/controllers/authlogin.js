@@ -12,7 +12,7 @@ app.controller('AuthController', function($scope, $location, Auth){
   $scope.login = function(user){
     Auth.login(user).then(function(){
       console.log("Logged in successfully!");
-      $location.path('/');
+      $location.path("/");
     }, function(err){
       console.log("Error...");
     });

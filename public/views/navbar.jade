@@ -4,7 +4,7 @@ div(class="navbar navabar-default" ng-controller="NavCtrlr")
       span(class="icon-bar")
       span(class="icon-bar")
       span(class="icon-bar")
-    a(class="navbar-brand" href="/#/") My Blog
+    a(class="navbar-brand" href="/#/" id='title') Love letters to my Girlfriends
   div(class="navbar-collapse collapse navbar-responsive-collapse")
     ul(class="nav navbar-nav")
       li(ng-repeat="page in pages")
@@ -12,7 +12,7 @@ div(class="navbar navabar-default" ng-controller="NavCtrlr")
     div(class="navbar-collapse collapse navbar-responsive-collapse")
       ul(class="nav navbar-nav")
         li(ng-show="signedIn()")
-          a(href="#/create") Create a Post
+          a(href="#/create") Create a Post {{authData.uid}}
       ul(class="nav navbar-nav navbar-right")
         li(ng-hide="signedIn()")
           a(href="#/register") Register

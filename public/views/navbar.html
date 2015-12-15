@@ -1,7 +1,7 @@
 
 <div ng-controller="NavCtrlr" class="navbar navabar-default">
   <div class="navbar-header">
-    <button type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/#/" class="navbar-brand">My Blog</a>
+    <button type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/#/" id="title" class="navbar-brand">Love letters to my Girlfriends</a>
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav">
@@ -9,7 +9,7 @@
     </ul>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
-        <li ng-show="signedIn()"><a href="#/create">Create a Post</a></li>
+        <li ng-show="signedIn()"><a href="#/create">Create a Post {{authData.uid}}</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="signedIn()"><a href="#/register">Register</a></li>
