@@ -155,3 +155,20 @@ a{
     transition: all 500ms ease-in-out;
   }
 }
+#commenter {
+    position: relative;
+    bottom: 45px;
+    left: 45px;
+    font-size: 12px;
+    font-style: oblique;
+    font-weight: 500;
+    z-index: 2;
+    margin-right: 2px;
+    @media screen and (max-width: 1200px){
+      bottom: 0px;
+      left: 0px;
+      font-size: 10px;
+      width: 200px;
+    }
+}
+

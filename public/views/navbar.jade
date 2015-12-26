@@ -12,23 +12,21 @@ div(class="navbar navabar-default" ng-controller="NavCtrlr")
 
     div(class="navbar-collapse collapse navbar-responsive-collapse")
       ul(class="nav navbar-nav") 
-        li(ng-show="signedIn() && currentUser.password.email === 'roche.kelly.e@gmail.com'")
+        li(ng-show="authData.google.displayName === 'Kelly Roche' || authData.facebook.displayName === 'Kelly Roche'")
           a(href="#/create") Create a Post 
-        li(id="profile" ng-show="signedIn()")
-          a() Hello {{currentUser.password.email}} !
+        li(id="profile" ng-show="loggedIn")
+          a() Hello!
+            i 
+              img(src="{{authData.google.profileImageURL || authData.facebook.profileImageURL}}" class="img-responsive img-circle" style="max-width: 45px; display:inline-block; margin-top:-13px")
+          
       ul(class="nav navbar-nav navbar-right") 
-        li(ng-hide="signedIn() ")
-          a(href="#/register") Register
-        li(ng-hide="signedIn()")
+        li(ng-hide="loggedIn")
           a(href="#/login") Login
-        li(ng-show="signedIn()" class="dropdown") 
+        li(ng-show="loggedIn" class="dropdown") 
           a(href="" class="dropdown-toggle" data-toggle="dropdown") 
             i(class="mdi mdi-account")
             span(class="caret")
           ul(class="dropdown-menu" role="menu")
-            li
-              a(data-toggle="modal" data-target="#pasModal")
-                i(class="mdi mdi-account-key" style="cursor:pointer;") Change Password
             li
               a(href="" ng-click="logout()")
                 i(class="mdi mdi-account-remove")   Log Out

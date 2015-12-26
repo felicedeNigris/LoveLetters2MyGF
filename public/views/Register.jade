@@ -23,6 +23,12 @@ div(class="container")
     br
     br
     input(type="submit"  value="Register" class="btn btn-danger")
+    button(type="button" class="btn btn-info" ng-click="loginFacebook()") 
+      span(class="mdi mdi-facebook")
+    button(type="button" class="btn btn-info" ng-click="loginGoogle()")
+      span(class="mdi mdi-google")
+
+
 script(type="text/javascript").
         $(document).ready(function(){
             $.material.init();

@@ -1,38 +1,32 @@
-app.controller('AuthController', function($scope, $location, Auth){
+app.controller('AuthController', function($scope,$rootScope, $location, Auth){
 
-  $scope.register = function(user){
-    Auth.register(user)
-      .then(function(){
-        //alert("Register successfully from register controller!");
-        $location.path("/register");
-      },
-      function(err){
-        console.log("Error...");
-      });
-  };
-  $scope.login = function(user){
-    Auth.login(user)
-      .then(function(){
-        console.log("Logged in successfully!");
-        $location.path("/");
-    }, function(err){
-      console.log("Error...");
+
+  $scope.loginGoogle = function(){
+    Auth.$authWithOAuthPopup("google").then(function(authData) {
+      console.log("Logged in as:", authData.google.displayName);
+      console.log("Authdata is ",authData);
+      location.reload();
+      $location.path('/');
+      $rootScope.authData = authData;
+    }).catch(function(error) {
+      console.error("Authentication failed:", error);
     });
   };
 
-  $scope.changePassword = function(user){
-    Auth.changePassword(user).then(function(){
-      // Reset form
-      $scope.user.email = '';
-      $scope.user.oldPass = '';
-      $scope.user.newPass = '';
-
-      console.log("Password changed successfully!");
-      alert("Password changed successfully!");
-      $('#pasModal').modal('hide');
-    }, function(err){
-      console.log("Error...");
+    $scope.loginFacebook = function(){
+    Auth.$authWithOAuthPopup("facebook").then(function(authData) {
+      console.log("Logged in as:", authData.facebook.displayName);
+      location.reload();
+      $location.path('/');
+      $rootScope.authData = authData;
+    }).catch(function(error) {
+      console.error("Authentication failed:", error);
     });
   };
 
+
+/*  $rootScope.authData = Auth.$onAuth(function(authData){
+    $scope.authData = authData;
+  });
+*/
 });

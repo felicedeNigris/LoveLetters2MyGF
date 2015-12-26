@@ -9,15 +9,13 @@
     </ul>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav"> 
-        <li ng-show="signedIn() &amp;&amp; currentUser.password.email === 'roche.kelly.e@gmail.com'"><a href="#/create">Create a Post </a></li>
-        <li id="profile" ng-show="signedIn()"><a>Hello {{currentUser.password.email}} !</a></li>
+        <li ng-show="authData.google.displayName === 'Kelly Roche' || authData.facebook.displayName === 'Kelly Roche'"><a href="#/create">Create a Post </a></li>
+        <li id="profile" ng-show="loggedIn"><a>Hello!<i> <img src="{{authData.google.profileImageURL || authData.facebook.profileImageURL}}" style="max-width: 45px; display:inline-block; margin-top:-13px" class="img-responsive img-circle"/></i></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right"> 
-        <li ng-hide="signedIn() "><a href="#/register">Register</a></li>
-        <li ng-hide="signedIn()"><a href="#/login">Login</a></li>
-        <li ng-show="signedIn()" class="dropdown"> <a href="" data-toggle="dropdown" class="dropdown-toggle"> <i class="mdi mdi-account"></i><span class="caret"></span></a>
+        <li ng-hide="loggedIn"><a href="#/login">Login</a></li>
+        <li ng-show="loggedIn" class="dropdown"> <a href="" data-toggle="dropdown" class="dropdown-toggle"> <i class="mdi mdi-account"></i><span class="caret"></span></a>
           <ul role="menu" class="dropdown-menu">
-            <li><a data-toggle="modal" data-target="#pasModal"><i style="cursor:pointer;" class="mdi mdi-account-key">Change Password</i></a></li>
             <li><a href="" ng-click="logout()"><i class="mdi mdi-account-remove">  Log Out</i></a></li>
           </ul>
         </li>

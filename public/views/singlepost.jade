@@ -4,6 +4,50 @@ div(class="container")
   h4
     {{selectedPost.text}}
 
+    //p {{selectedPost.comments.comment}}
+
   div(ng-show="selectedPost.photo !=''" class="col-md-offset-2 col-md-8 col-md-offset-2")
     div(ng-repeat="photo in selectedPost.photo" class="container-fluid")
       image(ng-src="{{photo}}" class="img-responsive")
+
+   // Comments section
+  br
+  br
+  br
+  br
+  div(class="row")
+    div(class="col-md-12")
+      div(class="panel panel-default")
+        div(class="panel-heading")
+          h3(class="panel-title") Comments Section
+
+
+        div(class="panel-body")
+          div(class="row" ng-repeat="(id,comment) in selectedPost.comments")
+            div(class="col-md-1")
+              img(src="{{comment.pic}}" class="img-responsive img-circle" style="max-width: 40px" ng-click="console.log('hey')")
+              p(id="commenter"){{comment.name}} said:
+            div(class="col-md-11")
+              div(class="well well-sm cmt" ng-mouseenter = "show = true" ng-mouseleave="show = false" )
+                span(class="cmt-title"){{comment.text}} 
+                span( ng-show="{{authData.facebook.displayName === 'Kelly Roche'}}" class="pull-right")
+                  i( class="mdi mdi-delete" style="cursor: pointer; opacity: .6; color: red" ng-click="clearItem(id)")
+              p {{id}}
+              //p{{comment}}
+          br
+          //alert(comment.text)
+  // Comment Form 
+
+  div(class="row" ng-show="loggedIn")
+    div(class="col-md-12")
+      form
+        div(class="form-group")
+          label( for="comments") Write a comment
+          input(type="text" id="comments" ng-model="message.text" cols="10" rows="3" class="form-control" placeholder="Comment Here . . ." required)
+          span(class="pull-right")
+            button(type="submit" ng-click="createComment(message)" class="btn btn-info" value="Comment") Comment
+  br
+  br
+  br
+  br
+  br

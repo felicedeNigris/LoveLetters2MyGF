@@ -1,10 +1,47 @@
 
 <div class="container">
   <h1 class="page-header">{{selectedPost.title}} </h1>
-  <h4>{{selectedPost.text}}</h4>
+  <h4>{{selectedPost.text}}
+    <!--p {{selectedPost.comments.comment}}-->
+  </h4>
   <div ng-show="selectedPost.photo !=''" class="col-md-offset-2 col-md-8 col-md-offset-2">
     <div ng-repeat="photo in selectedPost.photo" class="container-fluid">
       <image ng-src="{{photo}}" class="img-responsive"></image>
     </div>
   </div>
+  <!-- Comments section--><br/><br/><br/><br/>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Comments Section</h3>
+        </div>
+        <div class="panel-body">
+          <div ng-repeat="(id,comment) in selectedPost.comments" class="row">
+            <div class="col-md-1"><img src="{{comment.pic}}" style="max-width: 40px" ng-click="console.log('hey')" class="img-responsive img-circle"/>
+              <p id="commenter">{{comment.name}} said:</p>
+            </div>
+            <div class="col-md-11">
+              <div ng-mouseenter="show = true" ng-mouseleave="show = false" class="well well-sm cmt"><span class="cmt-title">{{comment.text}} </span><span ng-show="{{authData.facebook.displayName === 'Kelly Roche'}}" class="pull-right"><i style="cursor: pointer; opacity: .6; color: red" ng-click="clearItem(id)" class="mdi mdi-delete"></i></span></div>
+              <p>{{id}}</p>
+              <!--p{{comment}}-->
+            </div>
+          </div><br/>
+          <!--alert(comment.text)-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Comment Form -->
+  <div ng-show="loggedIn" class="row">
+    <div class="col-md-12">
+      <form>
+        <div class="form-group">
+          <label for="comments">Write a comment</label>
+          <input type="text" id="comments" ng-model="message.text" cols="10" rows="3" placeholder="Comment Here . . ." required="required" class="form-control"/><span class="pull-right">
+            <button type="submit" ng-click="createComment(message)" value="Comment" class="btn btn-info">Comment</button></span>
+        </div>
+      </form>
+    </div>
+  </div><br/><br/><br/><br/><br/>
 </div>
