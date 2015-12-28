@@ -1,5 +1,5 @@
 
-  app.controller('postController',["$scope","Blog","FBURL","Auth","authDataSrvc", "$firebaseObject", "$firebaseArray","FilePicker", "$window","$routeParams", function($scope,Blog,FBURL,Auth,authDataSrvc,$firebaseObject,$firebaseArray,FilePicker,$window,$routeParams){
+  app.controller('postController',["$scope","Blog","FBURL","Auth","authDataSrvc", "$firebaseObject", "$firebaseArray","FilePicker", "$window","$routeParams","$location", function($scope,Blog,FBURL,Auth,authDataSrvc,$firebaseObject,$firebaseArray,FilePicker,$window,$routeParams,$location){
 
 
     $scope.posts = Blog.allPosts; //All blog posts
@@ -34,7 +34,7 @@
       $scope.selectedPost.$save(post);
       $location.path('/');
     };
-    
+
     $scope.files = [];
 
 
@@ -50,7 +50,7 @@
 
     $scope.onSuccess = function(Blobs,newpost){
       $scope.files.push(Blobs); //push to filepicker
-      
+
       var imageURLs = []; //new image urls array
       Blobs.forEach(function(file){
         imageURLs.push(file.url); //inserts Blob.urls to imageURLs array
@@ -63,7 +63,7 @@
   // COMMENTS SECTION
 
       /*  {
-        
+
       }*/
 
     $scope.createComment = function(message){
@@ -95,7 +95,7 @@
       }),
       $scope.message = '';
     };
-      
+
     $scope.alert = function(text) {
     alert(text);
 };
